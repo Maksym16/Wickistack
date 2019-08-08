@@ -13,8 +13,10 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.static(__dirname + "/public"));
 
 app.get('/', (req, res, next) => {
-    res.send(layout(''));
+    res.redirect('/wiki');
 })
+
+
 
 app.use('/wiki',wikiRoutes);
 app.use('/users',userRoutes);
